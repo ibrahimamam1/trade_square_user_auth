@@ -1,4 +1,4 @@
-package com.iut.firstclass.config;
+package iut.cse.trade_square_user_auth.config;
 
 import iut.cse.trade_square_user_auth.config.AuthEntryPointJwt;
 import iut.cse.trade_square_user_auth.config.JwtAuthenticationFilter;

@@ -10,7 +10,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select u from User u where u.username = ?1")
     User findByUsername(String username);
 
-    @Query("select u from User u where u.firstname like %?1% OR u.lastname like %?1% OR u.firstname like %?2% OR u.lastname like %?2%")
+    @Query("select u from User u where u.username like %?1% OR u.username like %?2%")
     List<User> findByUserNames(String firstname, String lastname);
 
     @Query("select u from User u join Rating r on u.id = r.userId where avg(r.rating) > ?1 group by u")
