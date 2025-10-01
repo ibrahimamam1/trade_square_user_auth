@@ -18,4 +18,7 @@ public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long
 
     @Query("SELECT COUNT(t) > 0 FROM RefreshToken t WHERE t.userId = ?1 AND t.token = ?2")
     boolean existsByUserIdAndToken(Long id, String token);
+
+    @Query("SELECT t from RefreshToken t where t.token = ?1")
+    Optional<RefreshToken> findByToken(String token);
 }

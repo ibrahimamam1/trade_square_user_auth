@@ -33,7 +33,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if(urlStart.startsWith("/api/user/ping") ||
                 urlStart.startsWith("/user/register") ||
-                urlStart.startsWith("/user/login")){
+                urlStart.startsWith("/user/login/")){
             filterChain.doFilter(request, response);
             return;
         }
