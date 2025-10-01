@@ -6,14 +6,19 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public User register(@RequestBody User user) {return  userService.createNewUser(user);}
+    public Map<String, String> register(@RequestBody User user) {
+        System.out.println("register request");
+        System.out.println(user);
+        return  userService.createNewUser(user);}
 
     @GetMapping("/getUserById")
     public User getUserById(Long userId){ return userService.findUserById(userId); }
